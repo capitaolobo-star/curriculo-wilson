@@ -1,42 +1,131 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wilson Costa | Especialista</title>
-    <style>
-        body { margin: 0; padding: 0; background: #000; color: #fff; font-family: 'Arial', sans-serif; text-align: center; }
-        .container { width: 95%; max-width: 600px; margin: auto; padding: 20px 0; }
-        h1 { color: #c5a059; letter-spacing: 2px; margin-bottom: 5px; }
-        .subtitle { color: #888; font-size: 0.8rem; margin-bottom: 30px; }
-        .btn-pdf { display: block; width: 80%; margin: 20px auto; padding: 15px; background: #c5a059; color: #000; text-decoration: none; border-radius: 50px; font-weight: bold; }
-        
-        /* Ajuste mestre para fotos em qualquer dispositivo */
-        .galeria img { width: 100%; height: auto; border-radius: 10px; margin-bottom: 20px; border: 1px solid #333; display: block; }
-        
-        .player { position: fixed; bottom: 20px; right: 20px; background: #c5a059; color: #000; padding: 12px 20px; border-radius: 50px; cursor: pointer; font-weight: bold; z-index: 1000; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wilson Costa | Especialista</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    .container {
+      width: 95%;
+      max-width: 720px;
+      margin: auto;
+      padding: 20px 0 120px;
+    }
+
+    h1 {
+      color: #c5a059;
+      letter-spacing: 2px;
+      margin-bottom: 5px;
+    }
+
+    .subtitle {
+      color: #888;
+      font-size: 0.9rem;
+      margin-bottom: 25px;
+    }
+
+    .btn-pdf {
+      display: inline-block;
+      width: 90%;
+      max-width: 420px;
+      margin: 10px auto 25px;
+      padding: 15px;
+      background: #c5a059;
+      color: #000;
+      text-decoration: none;
+      border-radius: 999px;
+      font-weight: bold;
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .galeria img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      border: 1px solid #333;
+      display: block;
+    }
+
+    @media (min-width: 768px) {
+      .galeria {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .player {
+      position: fixed;
+      bottom: 18px;
+      left: 18px;
+      right: 18px;
+      margin: auto;
+      max-width: 520px;
+      background: #c5a059;
+      color: #000;
+      padding: 12px;
+      border-radius: 999px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 999;
+      border: none;
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="container">
+  <div class="container">
     <h1>WILSON COSTA</h1>
     <p class="subtitle">45 ANOS DE HISTÓRIA E EXCELÊNCIA</p>
 
-    <a href="curriculo-wilson-costa-2026.pdf" target="_blank" class="btn-pdf">BAIXAR PORTFÓLIO COMPLETO</a>
+    <a href="./currículo-wilson-costa-2026.pdf" class="btn-pdf" download>
+      BAIXAR PORTFÓLIO COMPLETO
+    </a>
 
     <div class="galeria">
-        <img src="imagem/capa_45_anos_02.jpg" alt="Capa">
-        <img src="imagem/o_especialista_01.jpg" alt="O Especialista">
-        <img src="imagem/o_legado_01.jpg" alt="O Legado">
-        <img src="imagem/a_versalidade_01.jpg" alt="Versatilidade">
-        <img src="imagem/reconhecimento_01.jpg" alt="Reconhecimento">
-        <img src="imagem/wilson_costa_memoria_01.jpg" alt="Memória">
+      <img src="imagem/capa_45_anos_02.jpg" alt="Capa">
+      <img src="imagem/o_especialista_01.jpg" alt="O Especialista">
+      <img src="imagem/o_legado_01.jpg" alt="O Legado">
+      <img src="imagem/a_versalidade_01.jpg" alt="Versatilidade">
+      <img src="imagem/reconhecimento_01.jpg" alt="Reconhecimento">
+      <img src="imagem/wilson_costa_memoria_01.jpg" alt="Memória">
     </div>
-</div>
+  </div>
 
-<audio id="musica" loop><source src="musica.mp3" type="audio/mpeg"></audio>
-<div class="player" onclick="document.getElementById('musica').play(); this.innerText='🎵 TOCANDO'">OUVIR TRILHA 🎵</div>
+  <audio id="musica" loop>
+    <source src="música.mp3" type="audio/mpeg">
+  </audio>
+
+  <button class="player" onclick="toggleMusic()">OUVIR TRILHA 🎵</button>
+
+  <script>
+    const audio = document.getElementById('musica');
+    const btn = document.querySelector('.player');
+
+    function toggleMusic() {
+      if (audio.paused) {
+        audio.play();
+        btn.textContent = '🎵 TOCANDO (toque para pausar)';
+      } else {
+        audio.pause();
+        btn.textContent = 'OUVIR TRILHA 🎵';
+      }
+    }
+  </script>
 
 </body>
 </html>
