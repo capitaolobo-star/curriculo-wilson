@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wilson Costa | 45 Anos de Excelência</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --ouro: #c5a059; --preto: #0f0f0f; --cinza: #1a1a1a; }
+        body { background-color: var(--preto); color: #ffffff; font-family: 'Montserrat', sans-serif; margin: 0; }
+        header { 
+            background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, var(--preto) 100%), url('img/capa_wilson_03.jpg');
+            background-size: cover; background-position: center; height: 60vh;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px;
+        }
+        h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 8vw, 3.5rem); color: var(--ouro); margin: 0; text-transform: uppercase; letter-spacing: 3px; }
+        .btn-gold { 
+            background: linear-gradient(45deg, var(--ouro), #a38245); color: #000;
+            padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; text-transform: uppercase; margin-top: 25px; display: inline-block; font-size: 0.9rem;
+        }
+        section { padding: 40px 10%; display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: center; border-bottom: 1px solid #222; }
+        section:nth-child(even) { background: var(--cinza); }
+        .slider-frame { 
+            position: relative; width: 100%; height: 350px; 
+            background: #000; border: 1px solid var(--ouro); border-radius: 12px; overflow: hidden;
+        }
+        .slide { 
+            position: absolute; width: 100%; height: 100%; 
+            object-fit: cover; /* ISSO FAZ A FOTO PREENCHER TUDO NO CELULAR */
+            object-position: center; opacity: 0; transition: opacity 0.8s ease-in-out; 
+        }
+        .slide.active { opacity: 1; }
+        
+        #player-musica { position: fixed; bottom: 15px; right: 15px; z-index: 9999; background: rgba(15,15,15,0.95); padding: 8px 15px; border-radius: 50px; border: 1px solid var(--ouro); display: flex; align-items: center; gap: 8px; }
+        #btnPlay { background: var(--ouro); border: none; border-radius: 50%; width: 30px; height: 30px; cursor: pointer; font-weight: bold; }
+
+        footer { padding: 30px; text-align: center; color: var(--ouro); font-weight: 600; font-size: 0.8rem; }
+
+        /* AJUSTE PARA CELULAR - O SEGREDO ESTÁ AQUI */
+        @media (max-width: 768px) { 
+            section { grid-template-columns: 1fr; text-align: center; padding: 40px 5%; }
+            .slider-frame { height: 300px; order: -1; } /* Foto em cima do texto no celular */
+            header { height: 50vh; }
+            h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div id="player-musica">
+    <span style="color: var(--ouro); font-size: 10px; font-weight: 600;">TRILHA</span>
+    <audio id="audioWilson" loop>
+        <source src="musica.mp3" type="audio/mpeg">
+    </audio>
+    <button onclick="toggleAudio()" id="btnPlay">▶</button>
+</div>
+
+<header>
+    <img src="img/capa_45_anos_02.jpg" style="width: 100px; margin-bottom: 15px;">
+    <h1>WILSON COSTA</h1>
+    <p style="letter-spacing: 2px; color: #ddd; font-size: 0.8rem;">45 ANOS DE EXCELÊNCIA</p>
+    <a href="curriculo-wilson-costa-2026.pdf" class="btn-gold" download>Baixar Portfólio PDF</a>
+</header>
+
+<section>
+    <div>
+        <h2 style="color: var(--ouro); font-family: 'Playfair Display';">O Especialista</h2>
+        <p>Referência em protocolo e cerimonial de alto padrão no Pará.</p>
+    </div>
+    <div class="slider-frame" data-group="1">
+        <img src="img/o_especialista_01.jpg" class="slide active">
+        <img src="img/o_especialista_02.jpg" class="slide">
+    </div>
+</section>
+
+<section>
+    <div class="slider-frame" data-group="2">
+        <img src="img/wilson_costa_memoria_02.jpg" class="slide active" style="object-position: top;">
+        <img src="img/wilson_costa_memoria_03.jpg" class="slide">
+    </div>
+    <div>
+        <h2 style="color: var(--ouro); font-family: 'Playfair Display';">Comunicação</h2>
+        <p>Trajetória marcante na TV Cultura e colunas sociais.</p>
+    </div>
+</section>
+
+<section>
+    <div>
+        <h2 style="color: var(--ouro); font-family: 'Playfair Display';">Artes e Performance</h2>
+        <p>O domínio dos palcos e a arte de contar histórias.</p>
+    </div>
+    <div class="slider-frame">
+        <img src="img/a_art_01.jpg" class="slide active" style="opacity: 1;">
+    </div>
+</section>
+
+<section>
+    <div class="slider-frame" data-group="4">
+        <img src="img/a_versalidade_01.jpg" class="slide active">
+        <img src="img/a_versalidade_02.jpg" class="slide">
+        <img src="img/a_versalidade_03.jpg" class="slide">
+    </div>
+    <div>
+        <h2 style="color: var(--ouro); font-family: 'Playfair Display';">Cultura Popular</h2>
+        <p>A tradição e o folclore através da performance artística.</p>
+    </div>
+</section>
+
+<section>
+    <div>
+        <h2 style="color: var(--ouro); font-family: 'Playfair Display';">Legado e História</h2>
+        <p>Um registro histórico de dedicação à cultura e sociedade.</p>
+    </div>
+    <div class="slider-frame" data-group="5">
+        <img src="img/o_legado_01.jpg" class="slide active">
+        <img src="img/o_legado_02.jpg" class="slide">
+        <img src="img/o_legado_03.jpg" class="slide">
+    </div>
+</section>
+
+<section>
+    <div class="slider-frame" data-group="6">
+        <img src="img/wilson_costa_memoria_01.jpg" class="slide active">
+        <img src="img/reconhecimento_01.jpg" class="slide">
+    </div>
+    <div>
+        <h2 style="color: var(--ouro); font-family: 'Playfair Display';">Reconhecimento</h2>
+        <p>Homenagens e premiações pelos 45 anos de carreira sólida.</p>
+    </div>
+</section>
+
+<footer>
+    <p>WILSON COSTA 2026 | CONTATO: (91) 99969-2307</p>
+    <p style="font-size: 0.7rem; opacity: 0.5;">DESENVOLVIDO POR PAULO LOBO</p>
+</footer>
+
+<script>
+    function runSlider(groupId) {
+        let slides = document.querySelectorAll(`[data-group="${groupId}"] .slide`);
+        let curr = 0;
+        if(slides.length > 1) {
+            setInterval(() => {
+                slides[curr].classList.remove('active');
+                curr = (curr + 1) % slides.length;
+                slides[curr].classList.add('active');
+            }, 2500);
+        }
+    }
+    [1,2,4,5,6].forEach(runSlider);
+
+    var audio = document.getElementById("audioWilson");
+    var btn = document.getElementById("btnPlay");
+    function toggleAudio() {
+        if (audio.paused) { audio.play(); btn.innerHTML = "||"; }
+        else { audio.pause(); btn.innerHTML = "▶"; }
+    }
+</script>
+</body>
+</html>
