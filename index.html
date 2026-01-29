@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wilson Costa | Especialista</title>
 
   <style>
@@ -19,8 +19,15 @@
     }
 
     .galeria{ display:grid; grid-template-columns:1fr; gap:18px; }
-    .galeria img{ width:100%; height:auto; display:block; border-radius:12px; border:1px solid #333; }
-    @media (min-width: 768px){ .galeria{ grid-template-columns:1fr 1fr; } }
+    .galeria img{
+      width:100%; height:auto; display:block;
+      border-radius:12px; border:1px solid #333;
+      background:#0b0b0b;
+    }
+
+    @media (min-width: 768px){
+      .galeria{ grid-template-columns:1fr 1fr; }
+    }
 
     .player{
       position:fixed; left:18px; right:18px; bottom:18px;
@@ -38,13 +45,24 @@
     <h1>WILSON COSTA</h1>
     <p class="subtitle">45 ANOS DE HISTÓRIA E EXCELÊNCIA</p>
 
+    <!-- ATENÇÃO: no seu repo o PDF está "currículo-wilson-costa-2026.pdf" (com acento).
+         Se o seu arquivo no GitHub estiver sem acento, me avisa que eu ajusto aqui. -->
     <a href="./currículo-wilson-costa-2026.pdf" class="btn-pdf" download>
       BAIXAR PORTFÓLIO COMPLETO
     </a>
 
     <div class="galeria">
-      <!-- CAPA -->
+      <!-- CAPAS -->
       <img src="imagem/capa_45_anos_02.jpg" alt="Capa 45 anos">
+      <img src="imagem/capa_wilson_03.jpg" alt="Capa Wilson">
+      <img src="imagem/capa_ultura_01.jpg" alt="Capa cultura">
+
+      <!-- ARTE / VERSALIDADE -->
+      <img src="imagem/a_art_01.jpg" alt="Arte 1">
+      <img src="imagem/a_arte_02.jpg" alt="Arte 2">
+      <img src="imagem/a_versalidade_01.jpg" alt="Versatilidade 1">
+      <img src="imagem/a_versalidade_02.jpg" alt="Versatilidade 2">
+      <img src="imagem/a_versalidade_03.jpg" alt="Versatilidade 3">
 
       <!-- ESPECIALISTA -->
       <img src="imagem/o_especialista_01.jpg" alt="O Especialista 1">
@@ -54,19 +72,12 @@
       <img src="imagem/o_legado_01.jpg" alt="O Legado 1">
       <img src="imagem/o_legado_02.jpg" alt="O Legado 2">
       <img src="imagem/o_legado_03.jpg" alt="O Legado 3">
-
-      <!-- RECONHECIMENTO -->
-      <img src="imagem/reconhecimento_01.jpg" alt="Reconhecimento">
-
-      <!-- MEMÓRIA -->
-      <img src="imagem/wilson_costa_memoria_01.jpg" alt="Memória 1">
-      <img src="imagem/wilson_costa_memoria_02.jpg" alt="Memória 2">
-      <img src="imagem/wilson_costa_memoria_03.jpg" alt="Memória 3">
     </div>
   </div>
 
   <audio id="musica" loop preload="none">
-    <source src="./música.mp3" type="audio/mpeg">
+    <!-- no seu repo parece estar "música.mp3" com acento. Se estiver "musica.mp3" sem acento, mude aqui. -->
+    <source src="./música.mp3" type="audio/mpeg" />
   </audio>
 
   <button class="player" id="playerBtn" type="button">OUVIR TRILHA 🎵</button>
