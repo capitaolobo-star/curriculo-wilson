@@ -3,79 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <title>Wilson Costa | 45 Anos de Excelência</title>
+    <title>Wilson Costa | Especialista</title>
     <style>
-        :root { --gold: #c5a059; --black: #0a0a0a; --gray: #1a1a1a; }
-        body { margin: 0; padding: 0; background: var(--black); color: #fff; font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.6; }
-        .container { width: 90%; max-width: 800px; margin: 0 auto; padding: 40px 0; text-align: center; }
+        body { margin: 0; padding: 0; background: #000; color: #fff; font-family: 'Arial', sans-serif; text-align: center; }
+        .container { width: 95%; max-width: 600px; margin: auto; padding: 20px 0; }
+        h1 { color: #c5a059; letter-spacing: 2px; margin-bottom: 5px; }
+        .subtitle { color: #888; font-size: 0.8rem; margin-bottom: 30px; }
+        .btn-pdf { display: block; width: 80%; margin: 20px auto; padding: 15px; background: #c5a059; color: #000; text-decoration: none; border-radius: 50px; font-weight: bold; }
         
-        h1 { color: var(--gold); font-size: clamp(1.8rem, 5vw, 2.8rem); margin-bottom: 5px; text-transform: uppercase; letter-spacing: 3px; }
-        .subtitle { color: #888; font-size: 0.9rem; letter-spacing: 4px; margin-bottom: 30px; text-transform: uppercase; }
+        /* Ajuste mestre para fotos em qualquer dispositivo */
+        .galeria img { width: 100%; height: auto; border-radius: 10px; margin-bottom: 20px; border: 1px solid #333; display: block; }
         
-        .btn-pdf { 
-            display: inline-block; padding: 18px 40px; background: var(--gold); color: #000; 
-            text-decoration: none; border-radius: 50px; font-weight: bold; margin-bottom: 50px;
-            transition: 0.3s; border: 2px solid var(--gold); text-transform: uppercase;
-        }
-        .btn-pdf:hover { background: transparent; color: var(--gold); }
-
-        .galeria { display: flex; flex-direction: column; gap: 25px; align-items: center; }
-        .galeria img { 
-            width: 100%; height: auto; border-radius: 8px; border: 1px solid #333;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: 0.4s;
-        }
-        
-        /* PLAYER PROFISSIONAL FLUTUANTE */
-        .audio-player {
-            position: fixed; bottom: 25px; right: 25px; background: rgba(197, 160, 89, 0.95);
-            color: #000; padding: 12px 25px; border-radius: 50px; cursor: pointer;
-            font-weight: bold; z-index: 1000; display: flex; align-items: center; gap: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
-        }
+        .player { position: fixed; bottom: 20px; right: 20px; background: #c5a059; color: #000; padding: 12px 20px; border-radius: 50px; cursor: pointer; font-weight: bold; z-index: 1000; }
     </style>
 </head>
 <body>
 
 <div class="container">
     <h1>WILSON COSTA</h1>
-    <p class="subtitle">45 Anos de História e Excelência</p>
+    <p class="subtitle">45 ANOS DE HISTÓRIA E EXCELÊNCIA</p>
 
-    <a href="curriculo-wilson-costa-2026.pdf" target="_blank" class="btn-pdf">Baixar Portfólio Completo</a>
+    <a href="curriculo-wilson-costa-2026.pdf" target="_blank" class="btn-pdf">BAIXAR PORTFÓLIO COMPLETO</a>
 
     <div class="galeria">
-        <img src="imagem/capa_45_anos_02.jpg" alt="Wilson Costa 45 Anos">
+        <img src="imagem/capa_45_anos_02.jpg" alt="Capa">
         <img src="imagem/o_especialista_01.jpg" alt="O Especialista">
         <img src="imagem/o_legado_01.jpg" alt="O Legado">
         <img src="imagem/a_versalidade_01.jpg" alt="Versatilidade">
         <img src="imagem/reconhecimento_01.jpg" alt="Reconhecimento">
-        <img src="imagem/wilson_costa_memoria_01.jpg" alt="Memória Profissional">
+        <img src="imagem/wilson_costa_memoria_01.jpg" alt="Memória">
     </div>
-
-    <footer style="margin-top: 60px; padding-bottom: 40px; color: #444; font-size: 0.8rem;">
-        © 2026 Wilson Costa - Todos os direitos reservados.
-    </footer>
 </div>
 
-<audio id="trilha" loop><source src="musica.mp3" type="audio/mpeg"></audio>
-
-<div class="audio-player" onclick="togglePlay()">
-    <span id="play-status">OUVIR TRILHA</span> 🎵
-</div>
-
-<script>
-    function togglePlay() {
-        var audio = document.getElementById('trilha');
-        var status = document.getElementById('play-status');
-        if (audio.paused) {
-            audio.play();
-            status.innerText = "TOCANDO AGORA";
-        } else {
-            audio.pause();
-            status.innerText = "OUVIR TRILHA";
-        }
-    }
-</script>
+<audio id="musica" loop><source src="musica.mp3" type="audio/mpeg"></audio>
+<div class="player" onclick="document.getElementById('musica').play(); this.innerText='🎵 TOCANDO'">OUVIR TRILHA 🎵</div>
 
 </body>
 </html>
