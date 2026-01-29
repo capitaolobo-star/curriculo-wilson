@@ -5,47 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wilson Costa - Cerimonialista</title>
     <style>
-        /* ESTILO PARA CELULAR E PC */
         body { margin: 0; padding: 0; font-family: sans-serif; background-color: #000; color: #fff; text-align: center; }
         .container { padding: 15px; max-width: 600px; margin: auto; }
-        h1 { color: #c5a059; font-size: 2rem; margin-top: 20px; text-transform: uppercase; }
-        
+        h1 { color: #c5a059; font-size: 2rem; margin-top: 20px; }
         .btn-pdf { 
             display: block; padding: 15px; background-color: #c5a059; color: #000; 
             text-decoration: none; border-radius: 30px; font-weight: bold; margin: 20px auto; width: 85%;
         }
-
-        /* AJUSTE DAS FOTOS: 100% da largura para não cortar */
-        .foto { width: 100%; height: auto; border-radius: 10px; border: 1px solid #333; margin-bottom: 15px; display: block; }
+        /* Isso garante que a foto apareça inteira no celular */
+        .foto { width: 100%; height: auto; border-radius: 10px; margin-bottom: 15px; display: block; border: 1px solid #333; }
         
-        .player-fixo {
+        .btn-musica {
             position: fixed; bottom: 20px; right: 20px; background: #c5a059;
-            color: #000; padding: 12px 20px; border-radius: 50px; cursor: pointer;
-            font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.5); z-index: 1000;
+            color: #000; padding: 12px; border-radius: 50px; font-weight: bold; cursor: pointer;
         }
     </style>
 </head>
 <body>
+    <div class="container">
+        <h1>WILSON COSTA</h1>
+        <p>45 ANOS DE EXCELÊNCIA</p>
+        
+        <a href="curriculo-wilson-costa-2026.pdf" target="_blank" class="btn-pdf">BAIXAR PORTFÓLIO PDF</a>
 
-<div class="container">
-    <h1>WILSON COSTA</h1>
-    <p style="color: #aaa; letter-spacing: 2px;">45 ANOS DE EXCELÊNCIA</p>
+        <img src="imagem/capa_45_anos_02.jpg" class="foto">
+        <img src="imagem/o_especialista_01.jpg" class="foto">
+        <img src="imagem/o_legado_01.jpg" class="foto">
+        <img src="imagem/a_versalidade_01.jpg" class="foto">
+        <img src="imagem/reconhecimento_01.jpg" class="foto">
+        
+        <p>© 2026 Wilson Costa</p>
+    </div>
 
-    <a href="curriculo-wilson-costa-2026.pdf" target="_blank" class="btn-pdf">BAIXAR PORTFÓLIO PDF</a>
-
-    <img src="imagem/capa_45_anos_02.jpg" class="foto">
-    <img src="imagem/o_especialista_01.jpg" class="foto">
-    <img src="imagem/o_legado_01.jpg" class="foto">
-    <img src="imagem/a_versalidade_01.jpg" class="foto">
-    <img src="imagem/reconhecimento_01.jpg" class="foto">
-
-    <p style="margin-top: 40px; font-size: 0.8rem; color: #444;">© 2026 Wilson Costa</p>
-</div>
-
-<audio id="musica" loop><source src="musica.mp3" type="audio/mpeg"></audio>
-<div class="player-fixo" onclick="document.getElementById('musica').play(); this.innerHTML='🎵 TOCANDO'">
-    🎵 OUVIR TRILHA
-</div>
-
+    <audio id="musica" loop><source src="musica.mp3" type="audio/mpeg"></audio>
+    <div class="btn-musica" onclick="document.getElementById('musica').play(); this.innerText='🎵 TOCANDO'">🎵 OUVIR TRILHA</div>
 </body>
 </html>
