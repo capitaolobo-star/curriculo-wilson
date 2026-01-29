@@ -3,41 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wilson Costa - Cerimonialista</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <title>Wilson Costa - Especialista</title>
     <style>
-        body { margin: 0; padding: 0; font-family: sans-serif; background-color: #000; color: #fff; text-align: center; }
-        .container { padding: 15px; max-width: 600px; margin: auto; }
-        h1 { color: #c5a059; font-size: 2rem; margin-top: 20px; }
-        .btn-pdf { 
-            display: block; padding: 15px; background-color: #c5a059; color: #000; 
-            text-decoration: none; border-radius: 30px; font-weight: bold; margin: 20px auto; width: 85%;
-        }
-        /* Isso garante que a foto apareça inteira no celular */
-        .foto { width: 100%; height: auto; border-radius: 10px; margin-bottom: 15px; display: block; border: 1px solid #333; }
-        
-        .btn-musica {
-            position: fixed; bottom: 20px; right: 20px; background: #c5a059;
-            color: #000; padding: 12px; border-radius: 50px; font-weight: bold; cursor: pointer;
-        }
+        body { margin: 0; padding: 0; background: #000; color: #fff; text-align: center; font-family: sans-serif; }
+        .container { padding: 15px; max-width: 500px; margin: auto; }
+        h1 { color: #c5a059; font-size: 1.8rem; }
+        .btn { display: block; padding: 15px; background: #c5a059; color: #000; text-decoration: none; border-radius: 30px; font-weight: bold; margin: 20px auto; width: 80%; }
+        /* FORÇANDO A FOTO A APARECER */
+        img { width: 100% !important; height: auto !important; border-radius: 10px; margin-bottom: 15px; border: 1px solid #333; display: block; }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>WILSON COSTA</h1>
         <p>45 ANOS DE EXCELÊNCIA</p>
-        
-        <a href="curriculo-wilson-costa-2026.pdf" target="_blank" class="btn-pdf">BAIXAR PORTFÓLIO PDF</a>
+        <a href="curriculo-wilson-costa-2026.pdf" class="btn">BAIXAR PDF</a>
 
-        <img src="imagem/capa_45_anos_02.jpg" class="foto">
-        <img src="imagem/o_especialista_01.jpg" class="foto">
-        <img src="imagem/o_legado_01.jpg" class="foto">
-        <img src="imagem/a_versalidade_01.jpg" class="foto">
-        <img src="imagem/reconhecimento_01.jpg" class="foto">
-        
-        <p>© 2026 Wilson Costa</p>
+        <img src="imagem/capa_45_anos_02.jpg">
+        <img src="imagem/o_especialista_01.jpg">
+        <img src="imagem/o_legado_01.jpg">
+        <img src="imagem/a_versalidade_01.jpg">
+        <img src="imagem/reconhecimento_01.jpg">
     </div>
 
-    <audio id="musica" loop><source src="musica.mp3" type="audio/mpeg"></audio>
-    <div class="btn-musica" onclick="document.getElementById('musica').play(); this.innerText='🎵 TOCANDO'">🎵 OUVIR TRILHA</div>
+    <audio id="m" loop><source src="musica.mp3" type="audio/mpeg"></audio>
+    <button onclick="document.getElementById('m').play()" style="position:fixed; bottom:20px; right:20px; background:#c5a059; border:none; padding:15px; border-radius:50px; font-weight:bold;">▶ TRILHA</button>
 </body>
 </html>
